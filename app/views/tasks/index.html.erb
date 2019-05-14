@@ -3,13 +3,19 @@
 <% @tasks.each do |task| %>
     <ul class="list-group list-group-flush">
         <% if task[:completed] == false  %>
-        <li class="list-group-item m-3"><i class="far fa-square"></i> <%=  link_to task.title, task %> <i class="fas fa-trash"></i><%= link_to "Delete", delete_path(task),
+        <li class="list-group-item m-3"><i class="far fa-square"></i> <%=  link_to task.title, task %><%= link_to delete_path(task),
         method: :delete,
-        data: { confirm: "Are you sure?" } %></li>
+        data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash"></i>
+        <% end %>
+        </li>
         <% else %>
-        <li class="list-group-item m-3"><i class="far fa-check-square"></i> <%= link_to task.title, task %> <i class="fas fa-trash"></i><%= link_to "Delete", delete_path(task),
+        <li class="list-group-item m-3"><i class="far fa-check-square"></i> <%= link_to task.title, task %> <%= link_to delete_path(task),
         method: :delete,
-        data: { confirm: "Are you sure?" } %></li>
+        data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash"></i>
+        <% end %>
+        </li>
         <% end %>
     </ul>
 <% end %>
