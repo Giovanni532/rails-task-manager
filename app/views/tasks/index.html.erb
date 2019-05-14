@@ -1,0 +1,18 @@
+<h1 class="text-center">My tasks</h1>
+<div class="text-center">
+<% @tasks.each do |task| %>
+    <ul class="list-group list-group-flush">
+        <% if task[:completed] == false  %>
+        <li class="list-group-item m-3"><i class="far fa-square"></i> <%=  link_to task.title, task %> <i class="fas fa-trash"></i><%= link_to "Delete", delete_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %></li>
+        <% else %>
+        <li class="list-group-item m-3"><i class="far fa-check-square"></i> <%= link_to task.title, task %> <i class="fas fa-trash"></i><%= link_to "Delete", delete_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %></li>
+        <% end %>
+    </ul>
+<% end %>
+<%= link_to "new task ?",  tasks_new_path, class: "btn btn-primary m-5"%>
+</div>
+

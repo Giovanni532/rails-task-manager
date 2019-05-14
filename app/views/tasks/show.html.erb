@@ -1,0 +1,8 @@
+<div class="text-center">
+    <h1 class="p-3" ><%= @task.title%></h1>
+    <p class="p-3"><%= @task.details%></p>
+
+    <%= link_to "edit this task", edit_path, class: "btn btn-primary mx-4" %>
+    <%= link_to "back to home", tasks_path, class: "btn btn-secondary mx-4" %>
+</div>
+

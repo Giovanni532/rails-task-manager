@@ -1,0 +1,22 @@
+<div class="text-center mx-auto p-4">
+<%= form_for(@task) do |f| %>
+<div class="text-center mx-auto" style="width:400px;">
+  <div class="form-group text-center mx-auto">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group text-center mx-auto">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: 'form-control' %>
+  </div>
+
+  <div class="form-group text-center mx-auto">
+    <%= f.label :completed %>
+    <%= f.text_field :completed, class: 'form-control' %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
+</div>
